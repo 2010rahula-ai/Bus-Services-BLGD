@@ -16,8 +16,8 @@
  <header id="fullscreen-header" class="header">
   <div style="position:fixed; left:0; top:0;"><img src="Images/hero.png" style="height:50px;"></div>
   <div style="position:fixed; top:8px; right:20px; color:#fef48c; text-align:right; font-size:14px;">
-    <span style="color:#ffffff;"><b>ප්‍රවාහන බස් </b></span>සේවා<br>
-    <span style="color:#e8f397; font-size:12px; font-weight:bold;"><i>බලංගොඩ </i></span>
+    <span style="color:#ffffff;"><b id="brand-main">ප්‍රවාහන බස් </b></span>සේවා<br>
+    <span style="color:#e8f397; font-size:12px; font-weight:bold;"><i id="brand-sub">බලංගොඩ </i></span>
   </div>
   <hr class="hr1"/>
  </header>
@@ -25,17 +25,16 @@
 <main class="main-container">
   <div class="left-panel">
     <div class="card">
-      <label>බස් මාර්ගය</label>
+      <label id="label-route">බස් මාර්ගය</label>
       <select id="routeSelect">
         <option value="BL-01" selected>බලංගොඩ-වේලිඔය-හම්බෙගමුව</option>
         <option value="BL-02">බලංගොඩ-වැලිපතයාය-කල්තොට</option>
         <option value="BL-03">බලංගොඩ-රජවක-මුල්ගම</option>
       </select> 
 
-      <label>බස් සේවාව</label>
+      <label id="label-service">බස් සේවාව</label>
       
   <select id="bus-service">
-    
   <option value="normal" selected>සාමාන්‍ය (ලංගම සහ පුද්ගලික)</option>
   <option value="express">දුර ගමන් සේවා</option>
   <option value="AC">AC</option>
@@ -45,7 +44,7 @@
       
       
       
-      <label>ගමනාරමිභය</label>
+      <label id="label-from">ගමනාරමිභය</label>
       <select id="fromSelect">
         <option value="Balangoda" selected>බලංගොඩ</option>
         <option value="Kirimatitenna">කිරිමැටිතැන්න</option>
@@ -56,7 +55,7 @@
         <option value="Welioya">වේලිඔය</option>
       </select>
 
-      <label>ගමනාන්තය</label>
+      <label id="label-to">ගමනාන්තය</label>
       <select id="toSelect">
         <option value="Balangoda">බලංගොඩ</option>
         <option value="Kirimatitenna">කිරිමැටිතැන්න</option>
@@ -69,7 +68,7 @@
       
       
       
-      <label>වේලාව</label>
+      <label id="label-time">වේලාව</label>
       <input type="time" id="timeInput"> 
       
       
@@ -79,13 +78,19 @@
 
     <div class="card result-card">
       <span class="pill" id="servicePill" style="display:none;"></span>
-      <label>ප්‍රතිපල</label>
-      <h2 id="resultTitle" style="margin:10px;">--</h2>
-      <h1 id="resultTime" style="margin: 10px; font-size:36px;">--:--</h1>
+      <label id="label-result">ප්‍රතිපල</label>
+      <h3 id="resultShort" style="margin:6px;">--</h3>
+      <div id="resultStops">
+        <div><strong id="fromName">--</strong> <span id="fromTime">--:--</span></div>
+        <div><strong id="toName">--</strong> <span id="toTime">--:--</span></div>
+      </div>
+      <h1 id="resultTime" style="margin: 10px; font-size:28px;">--:--</h1>
       <div class="nav-btns">
         <button class="btn-sm" id="prevBusBtn"><i class="fa fa-chevron-left"></i> පසුගිය</button>
         <button class="btn-sm" id="nextBusBtn">මීළඟ <i class="fa fa-chevron-right"></i></button>
       </div>
+
+      <div id="resultDetails" style="margin-top:10px; font-size:14px; color:#d7d7d7;"></div>
     </div> 
     
     <div class="card">
@@ -104,7 +109,7 @@
     <div class="map-buttons">
       <button id="setFromBtn" title="Set From"><i class="fa fa-location-dot"></i></button>
       <button id="setToBtn" title="Set To"><i class="fa fa-location-pin"></i></button>
-      <button id="centerBtn" title="Center"><i class="fa fa-location-crosshairs"></i></button>
+      <button id="centerBtn" title="Locate me"><i class="fa fa-location-crosshairs"></i></button>
     </div>
 </div>
   
@@ -115,7 +120,10 @@
 
 
   <section id="map-page" class="page">
-  <div id="map"></div>
+  <div class="map-full-container">
+    <!-- Re-uses the same map instance. -->
+    <div id="map-full" class="map-full"></div>
+  </div>
   </section>
 
 
@@ -146,13 +154,24 @@
     </div>
     
     <div>
-      <img class="cogwheel" src="images/settings.svg"">
+      <img class="cogwheel" src="images/settings.svg">
       <img class="cogwheel-2" src="images/settings.svg">
     </div>
     
 </div>    
     
-    </div></div>
+    </div>
+
+    <div style="padding:12px;">
+      <label for="langSelect">Language</label>
+      <select id="langSelect">
+        <option value="si">සිංහල</option>
+        <option value="ta">தமிழ்</option>
+        <option value="en">English</option>
+      </select>
+    </div>
+
+</div></div>
 </section>
   <footer class="footer">
   <nav class="bottom-nav" >
