@@ -19,7 +19,7 @@
   "screenshots": [
     {
       "src"
-      :"./images/screenshot.png",
+      "./images/screenshot.png",
       "sizes": "576x1184",
       "type": "image/png",
       "form_factor": "narrow",
