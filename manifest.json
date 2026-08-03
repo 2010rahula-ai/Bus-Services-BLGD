@@ -1,100 +1,35 @@
 {
   "name": "Bus Services Balangoda",
   "short_name": "Buses BLGD",
-  "description": "📥 📲 offline| සිංහල | தமிழ் | English | ⚠️ වෙබ් බ්‍රවුසරයේ(chrome)history ඩිලීට් කරද්දී මෙම ඇප් එකට අයත් දත්ත ඩිලීට් වුනොත් offline ක්‍රියා විරහිත වේ.         ⚠️To work offline, avoid deleting the cached data of this app when you clean the web browser's history.  📩 balangodabustime@gmail.com",
+  "description": "Offline-capable bus times for Balangoda (සිංහල | தமிழ் | English)",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "orientation": "any",
   "dir": "ltr",
-  "lang": "en-US",
+  "lang": "si",
   "prefer_related_applications": false,
   "background_color": "#002755",
   "theme_color": "#002755",
-  "categories": [
-    "bus time finding",
-    "transportation",
-    "navigation"
-  ],
+  "categories": ["transportation", "navigation"],
   "screenshots": [
-    {
-      "src"
-      :"./images/screenshot.png",
-      "sizes": "576x1184",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "purpose": "any"
-    },
-    {
-      "src":
-      "./images/screenshot1.png",
-      "sizes": "576x1184",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "purpose": "any"
-    },
-    {
-      "src": "./images/screenshot2.png",
-      "sizes": "576x1184",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "purpose": "any"
-    }
+    { "src": "./images/screenshot.png", "sizes": "576x1184", "type": "image/png" },
+    { "src": "./images/screenshot1.png", "sizes": "576x1184", "type": "image/png" },
+    { "src": "./images/screenshot2.png", "sizes": "576x1184", "type": "image/png" }
   ],
   "icons": [
-    {
-      "src": "./images/icon.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "./images/fedora.svg",
-      "sizes": "512x512",
-      "type": "image/svg",
-      "purpose": "maskable"
-    },
-    {
-      "src": "./images/logo.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any"
-    }
+    { "src": "./images/icon.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./images/fedora.svg", "sizes": "512x512", "type": "image/svg+xml", "purpose": "maskable" },
+    { "src": "./images/logo.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
   ],
   "shortcuts": [
-    {
-      "name": "Find Bus",
-      "short_name": "Find",
-      "description": "Quickly find your bus",
-      "url": "./index.html?mode=find",
-      "icons": [
-        {
-          "src": "./images/fedora.svg",
-          "sizes": "192x192"
-        }
-      ]
-    },
-    {
-      "name": "View Map",
-      "short_name": "Map",
-      "description": "View bus routes on map",
-      "url": "./index.html?mode=map",
-      "icons": [
-        {
-          "src": "./images/logo.png",
-          "sizes": "512x512"
-        }
-      ]
-    }
+    { "name": "Find Bus", "short_name": "Find", "url": "./index.html?mode=find" },
+    { "name": "View Map", "short_name": "Map", "url": "./index.html?mode=map" }
   ],
   "share_target": {
     "action": "./index.html",
     "method": "POST",
     "enctype": "application/x-www-form-urlencoded",
-    "params": {
-      "title": "title",
-      "text": "text",
-      "url": "url"
-    }
+    "params": { "title": "title", "text": "text", "url": "url" }
   }
 }
